@@ -1,0 +1,131 @@
+#USERS ENDPOINTS
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "Name": "Wanga Mburu",
+    "Email": "wangamburu724@gmail.com",
+    "Password": "Wanga@724!"
+}
+
+####
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "Email": "wangamburu724@gmail.com",
+    "Password": "Wanga@724!"
+}
+
+####
+#To get all users by Admin only
+GET http://localhost:3000/auth/users
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiI1MDNjMmM0Zi0zZmE1LTQ2ZTYtODkzNi03M2EzZTdlNmQxNmUiLCJOYW1lIjoiTmplbmdhIERhdmlkIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE4NjI3NDUxLCJleHAiOjE3MTg2MzEwNTF9.cCRXEFaJ1IVANwpVWFkEtEeTqnzdCw0wQ100tx8PtcI
+
+
+####
+#To get a specific user
+GET http://localhost:3000/auth/users/503c2c4f-3fa5-46e6-8936-73a3e7e6d16e
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiI1MDNjMmM0Zi0zZmE1LTQ2ZTYtODkzNi03M2EzZTdlNmQxNmUiLCJOYW1lIjoiTmplbmdhIERhdmlkIiwiaXNBZG1pbiI6MCwiaWF0IjoxNzE4NjI2NDUxLCJleHAiOjE3MTg2MzAwNTF9.dHpm-XGxGuZWCepOy1q8_3JYQhbGV8xByctAZTfr6-g
+
+
+####
+#To update user info
+PUT http://localhost:3000/auth/users/5c1b5e7a-1f76-4697-99c0-fb5644df8245
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiI1YzFiNWU3YS0xZjc2LTQ2OTctOTljMC1mYjU2NDRkZjgyNDUiLCJOYW1lIjoiTWFnZ2llIE1idXJ1IiwiaXNBZG1pbiI6MCwiaWF0IjoxNzE4NjI2NzU1LCJleHAiOjE3MTg2MzAzNTV9.fpjgS9_cI9lkBt_amDyoH8WRB3J8KCwAwZv6fTt8LWU
+Content-Type: application/json
+
+{
+    "Name": "Maggie Georges",
+    "Email": "maggiegeorges2814@gmail.com",
+    "Password": "Maggie@254!"
+}
+
+
+####
+#To delete a user by Admin only
+DELETE http://localhost:3000/auth/users/e61b53a3-a919-4bb8-bcb8-249b2196e5ce
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiI1MDNjMmM0Zi0zZmE1LTQ2ZTYtODkzNi03M2EzZTdlNmQxNmUiLCJOYW1lIjoiTmplbmdhIERhdmlkIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE4NjI3NDUxLCJleHAiOjE3MTg2MzEwNTF9.cCRXEFaJ1IVANwpVWFkEtEeTqnzdCw0wQ100tx8PtcI
+
+#####
+####TOURS API
+#Adding a Tour
+POST http://localhost:3000/tours/add
+Token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiI4MjkwN2U0Ni05MTU3LTQyNzktODZlYi0yODVkNTNjZWNmY2QiLCJOYW1lIjoiV2FuZ2EgTWJ1cnUiLCJpc0FkbWluIjoxLCJpYXQiOjE3MTg2NDg3MDMsImV4cCI6MTcxODY1MjMwM30.19zItzZBSSfIc1Vbb7saeWYUm_pCKFdB4j8komZlZew
+Content-Type: application/json
+
+{
+    "name": "Safari Adventure in Maasai Mara",
+    "destination": "Maasai Mara, Kenya",
+    "description": "Experience the thrill of a safari in one of Africa's most famous national reserves. Witness the Big Five and marvel at the stunning landscapes.",
+    "price": 500
+}
+#####
+#Getting all tours by both admins and users
+GET http://localhost:3000/tours
+
+####
+#Getting a tour by both admins and users
+GET http://localhost:3000/tours/0B19A899-A081-43F3-B1A5-5E16E069C023
+
+#####
+#Only an admin can update a tour
+PUT http://localhost:3000/tours/0B19A899-A081-43F3-B1A5-5E16E069C023
+Token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiI4MjkwN2U0Ni05MTU3LTQyNzktODZlYi0yODVkNTNjZWNmY2QiLCJOYW1lIjoiV2FuZ2EgTWJ1cnUiLCJpc0FkbWluIjoxLCJpYXQiOjE3MTg2NDg3MDMsImV4cCI6MTcxODY1MjMwM30.19zItzZBSSfIc1Vbb7saeWYUm_pCKFdB4j8komZlZew
+Content-Type: application/json
+
+{
+    "name": "Safari Park Adventure ",
+    "destination": "Nairobi",
+    "description": "Experience the thrill of a safari in one of Africa's most famous national reserves. Witness the Big Five and marvel at the stunning landscapes.",
+    "price": 400
+}
+
+#####
+##Only an Admin can delete a tour
+DELETE http://localhost:3000/tours/123ECEDF-6F38-410B-9F6C-55CB8F8C88EA
+Token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiI4MjkwN2U0Ni05MTU3LTQyNzktODZlYi0yODVkNTNjZWNmY2QiLCJOYW1lIjoiV2FuZ2EgTWJ1cnUiLCJpc0FkbWluIjoxLCJpYXQiOjE3MTg2NTIzNDAsImV4cCI6MTcxODY1NTk0MH0.OafOQvYa4WD1vui7NcSlFW3DABXH-kCwsqzYqRozGjQ
+
+
+
+
+######
+##HOTELS API
+#Adding a hotel by admins only
+POST http://localhost:3000/hotels/add
+Token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiI4MjkwN2U0Ni05MTU3LTQyNzktODZlYi0yODVkNTNjZWNmY2QiLCJOYW1lIjoiV2FuZ2EgTWJ1cnUiLCJpc0FkbWluIjoxLCJpYXQiOjE3MTg2NDQ1NTksImV4cCI6MTcxODY0ODE1OX0.CEwgDSKMHSsbdwnwACcHbkV9X-67k6k7zI434ddDyKE
+Content-Type: application/json
+ 
+{
+    "name": "The Amboseli Serena Safari Lodge",
+    "location": "Amboseli",
+    "StarRating": 4
+}
+        
+
+#####
+#Getting all hotels by both admins and users
+GET http://localhost:3000/hotels
+
+####
+#Getting a hotel by both admins and users
+GET http://localhost:3000/hotels/9E40EA93-B8EF-4924-AFED-046A9D523986
+
+
+#####
+#Only an admin can update a hotel
+PUT http://localhost:3000/hotels/9E40EA93-B8EF-4924-AFED-046A9D523986
+Token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiI4MjkwN2U0Ni05MTU3LTQyNzktODZlYi0yODVkNTNjZWNmY2QiLCJOYW1lIjoiV2FuZ2EgTWJ1cnUiLCJpc0FkbWluIjoxLCJpYXQiOjE3MTg2NDg3MDMsImV4cCI6MTcxODY1MjMwM30.19zItzZBSSfIc1Vbb7saeWYUm_pCKFdB4j8komZlZew
+Content-Type: application/json
+
+{
+    "name": "Maasai Mara Resort",
+    "location": "Maasai Land",
+    "StarRating": 3
+}
+
+
+#####
+##Only an admin can delete a hotel
+DELETE http://localhost:3000/hotels/439839FE-B0A2-4DE8-85DC-689AF51FE849
+Token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiI4MjkwN2U0Ni05MTU3LTQyNzktODZlYi0yODVkNTNjZWNmY2QiLCJOYW1lIjoiV2FuZ2EgTWJ1cnUiLCJpc0FkbWluIjoxLCJpYXQiOjE3MTg2NDQ1NTksImV4cCI6MTcxODY0ODE1OX0.CEwgDSKMHSsbdwnwACcHbkV9X-67k6k7zI434ddDyKE

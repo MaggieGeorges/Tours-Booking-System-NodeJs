@@ -1,0 +1,9 @@
+USE Tours;
+GO
+
+CREATE TABLE Hotels (
+    ID UNIQUEIDENTIFIER PRIMARY KEY,
+    Name NVARCHAR(255) NOT NULL,
+    Location NVARCHAR(255) NOT NULL,
+    StarRating INT NOT NULL
+);

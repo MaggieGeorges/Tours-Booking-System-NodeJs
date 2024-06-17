@@ -1,0 +1,9 @@
+USE Tours;
+GO
+
+CREATE PROCEDURE getHotelById
+    @Id UNIQUEIDENTIFIER
+AS
+BEGIN
+    SELECT * FROM Hotels WHERE ID = @Id;
+END;

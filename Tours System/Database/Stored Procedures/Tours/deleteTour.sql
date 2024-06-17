@@ -1,0 +1,14 @@
+USE Tours;
+GO
+
+
+CREATE OR ALTER PROCEDURE deleteTour
+    @Id UNIQUEIDENTIFIER
+
+AS
+BEGIN
+    
+    DELETE FROM Tours WHERE ID = @id;
+    
+END
+

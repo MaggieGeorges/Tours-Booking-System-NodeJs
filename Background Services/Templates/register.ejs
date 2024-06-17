@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Your Tour Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .header p {
+            font-size: 45px;
+            font-weight: bold;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .content p {
+            color: #333333;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .content h2 {
+            font-size: 35px;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        .content .welcome-text {
+            font-size: 30px;
+            color: #666666;
+            margin: 10px 0;
+        }
+        .content .details {
+            font-size: 20px;
+            color: #666666;
+            margin: 10px 0;
+        }
+        .footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+            background-color: crimson;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p>Your Tour Guide</p>
+        </div>
+        <div class="content">
+            <img src="https://your-image-link.com/tour-image.jpg" alt="image"/>
+            <p>Hello <%=name%>,</p>
+            <h2>Welcome to Your Tour Guide</h2>
+            <p class="welcome-text">Your ultimate travel companion!</p>
+            <p class="details">
+                At Your Tour Guide, we offer a wide range of tours to the most beautiful and exciting destinations. From adventure tours and cultural experiences to relaxing getaways, we have it all. Enjoy seamless booking experience and great deals on every trip. Happy traveling!
+            </p>
+        </div>
+        <div class="footer">
+            <a href="#">Book Now</a>
+        </div>
+    </div>
+</body>
+</html>

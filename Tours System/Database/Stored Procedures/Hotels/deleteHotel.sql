@@ -1,0 +1,9 @@
+USE Tours;
+GO
+
+CREATE PROCEDURE deleteHotel
+    @Id UNIQUEIDENTIFIER
+AS
+BEGIN
+    DELETE FROM Hotels WHERE ID = @Id;
+END;

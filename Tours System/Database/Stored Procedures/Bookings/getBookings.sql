@@ -1,0 +1,8 @@
+USE Tours;
+GO
+
+CREATE PROCEDURE GetAllBookings
+AS
+BEGIN
+    SELECT * FROM Bookings;
+END;
