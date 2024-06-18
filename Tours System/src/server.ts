@@ -3,7 +3,7 @@ import express,{ json } from 'express'
 import authRouter from './routes/authRoutes'
 import toursRouter from './routes/toursRoutes'
 import hotelsRouter from './routes/hotelsRoutes'
-import bookingsRouter from './routes/bookingsRoutes';
+import bookingRouter from './routes/bookingsRoutes';
 
 
 const app = express()
@@ -13,7 +13,7 @@ app.use(json())
 app.use("/auth", authRouter)
 app.use("/tours", toursRouter);
 app.use('/hotels', hotelsRouter);
-app.use('/bookings', bookingsRouter);
+app.use('/bookings', bookingRouter);
 //start
 
 

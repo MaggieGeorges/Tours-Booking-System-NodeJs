@@ -1,14 +1,15 @@
 USE Tours;
 GO
 
-CREATE PROCEDURE UpdateBooking
+CREATE PROCEDURE UpdateBooks
     @Id INT,
+    @UserId  VARCHAR(36),
     @ToursId VARCHAR(36),
     @HotelsId UNIQUEIDENTIFIER,
     @BookingDate DATE
 AS
 BEGIN
     UPDATE Bookings
-    SET ToursId = @ToursId, HotelsId = @HotelsId, BookingDate = @BookingDate
+    SET UserId=@UserId, ToursId = @ToursId, HotelsId = @HotelsId, BookingDate = @BookingDate
     WHERE Id = @Id;
 END;

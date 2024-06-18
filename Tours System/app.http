@@ -3,9 +3,9 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "Name": "Wanga Mburu",
-    "Email": "wangamburu724@gmail.com",
-    "Password": "Wanga@724!"
+    "Name": "Maggie Georges",
+    "Email": "georgesmaggie735@gmail.com",
+    "Password": "Georges@735!"
 }
 
 ####
@@ -13,14 +13,14 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "Email": "wangamburu724@gmail.com",
-    "Password": "Wanga@724!"
+    "Email": "njengadavid111@gmail.com",
+    "Password": "39667871#Davy"
 }
 
 ####
 #To get all users by Admin only
 GET http://localhost:3000/auth/users
-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiI1MDNjMmM0Zi0zZmE1LTQ2ZTYtODkzNi03M2EzZTdlNmQxNmUiLCJOYW1lIjoiTmplbmdhIERhdmlkIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE4NjI3NDUxLCJleHAiOjE3MTg2MzEwNTF9.cCRXEFaJ1IVANwpVWFkEtEeTqnzdCw0wQ100tx8PtcI
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiI1MDNjMmM0Zi0zZmE1LTQ2ZTYtODkzNi03M2EzZTdlNmQxNmUiLCJOYW1lIjoiTmplbmdhIERhdmlkIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE4NzA0NTc3LCJleHAiOjE3MTg3MDgxNzd9.WU_ooG8cgmbATpavUM06f5GhEY2darSYbQMRt8F8_nE
 
 
 ####
@@ -45,7 +45,7 @@ Content-Type: application/json
 ####
 #To delete a user by Admin only
 DELETE http://localhost:3000/auth/users/e61b53a3-a919-4bb8-bcb8-249b2196e5ce
-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiI1MDNjMmM0Zi0zZmE1LTQ2ZTYtODkzNi03M2EzZTdlNmQxNmUiLCJOYW1lIjoiTmplbmdhIERhdmlkIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE4NjI3NDUxLCJleHAiOjE3MTg2MzEwNTF9.cCRXEFaJ1IVANwpVWFkEtEeTqnzdCw0wQ100tx8PtcI
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiI1MDNjMmM0Zi0zZmE1LTQ2ZTYtODkzNi03M2EzZTdlNmQxNmUiLCJOYW1lIjoiTmplbmdhIERhdmlkIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE4NzA0MzY3LCJleHAiOjE3MTg3MDc5Njd9.-nibyrZPJ9AHUuFHmICal33VMC3-HA330SimwQZxDIw
 
 #####
 ####TOURS API
@@ -129,3 +129,22 @@ Content-Type: application/json
 ##Only an admin can delete a hotel
 DELETE http://localhost:3000/hotels/439839FE-B0A2-4DE8-85DC-689AF51FE849
 Token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiI4MjkwN2U0Ni05MTU3LTQyNzktODZlYi0yODVkNTNjZWNmY2QiLCJOYW1lIjoiV2FuZ2EgTWJ1cnUiLCJpc0FkbWluIjoxLCJpYXQiOjE3MTg2NDQ1NTksImV4cCI6MTcxODY0ODE1OX0.CEwgDSKMHSsbdwnwACcHbkV9X-67k6k7zI434ddDyKE
+
+
+
+
+######
+##BOOKINGS API
+##Creating a booking
+POST http://localhost:3000/bookings
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiI1MDNjMmM0Zi0zZmE1LTQ2ZTYtODkzNi03M2EzZTdlNmQxNmUiLCJOYW1lIjoiTmplbmdhIERhdmlkIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzE4NzE5MjU1LCJleHAiOjE3MTg3MjI4NTV9.hIdizevCgshsDjTMWAG3QMaeOzwjxNCnu3H-JwVst-A
+Content-Type: application/json
+
+{
+    "userId": "82907e46-9157-4279-86eb-285d53cecfcd",
+    "toursId": "123ECEDF-6F38-410B-9F6C-55CB8F8C88EA",
+    "hotelsId": "5E6F1566-72AC-4107-B814-36322073C22B",
+    "BookingDate": "2024-06-20"
+}
+
+

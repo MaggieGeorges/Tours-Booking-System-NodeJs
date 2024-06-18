@@ -1,35 +1,37 @@
-import nodemailer from 'nodemailer'
-import path from 'path'
-import dotenv from 'dotenv'
-dotenv.config({path:path.resolve(__dirname,"../../.env")})
+import nodemailer from 'nodemailer';
+import path from 'path';
+import dotenv from 'dotenv';
+import ejs from 'ejs'
 
+dotenv.config({ path: path.resolve(__dirname, "../../.env") });
 
-//Step1: creating a configuration object
 let config = {
-    host: "smtp.gmail.com",
-    service: "gmail",
-    port: 587,
-    auth: {
-        user:process.env.EMAIL,
-        pass:process.env.PASS
-    }
+  host: "smtp.gmail.com",
+  service:"gmail",
+  port: 587, // Use 465 for SSL or 587 for TLS
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.PASS,
+  }
 }
 
-//Step2: creating a transporter
+
 function createTransporter(config:any){
     return nodemailer.createTransport(config)
 }
 
-//Step3: sending email
-export async function sendEmail(messageOption:any) {
-    let transporter = createTransporter(config)
-    await transporter.verify()
+export async function sendEmail(messageOption: any) {
+  let transporter = createTransporter(config);
 
-    await transporter.sendMail(messageOption, (err, info)=>{
+    await transporter.verify();
+
+    await transporter.sendMail(messageOption, (err,info)=>{
         if(err){
             console.log(err);
+            
         }
-        console.log(info)
+
+        console.log(info);
+        
     })
 }
-

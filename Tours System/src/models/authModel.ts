@@ -15,5 +15,6 @@ export interface User {
 export interface PayLoad {
     Sub: string;         
     Name: string;       
-    isAdmin: boolean;    
+    isAdmin: boolean;
+    userId: string;    
 }

@@ -1,13 +1,13 @@
-import express from "express";
-import cron from 'node-cron'
-import { run } from "./EmailService"
+import express from 'express';
+import cron from 'node-cron';
+import { run } from './EmailService';
 
-const app = express()
+const app = express();
 
-cron.schedule('*/10 * * * * *', async()=>{
-    await run()
-})
+cron.schedule('*/10 * * * * *', async () => {
+  await run();
+});
 
-app.listen(3001,()=>{
-    console.log("Server is Running...")
-})
+app.listen(3001, () => {
+  console.log("Server is Running...");
+});

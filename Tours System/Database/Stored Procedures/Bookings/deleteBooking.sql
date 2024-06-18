@@ -1,9 +1,11 @@
 USE Tours;
 GO
 
-CREATE PROCEDURE CancelBooking
-    @Id INT
+CREATE OR ALTER PROCEDURE cancelBooking
+    @id VARCHAR(36)
 AS
 BEGIN
-    DELETE FROM Bookings WHERE Id = @Id;
+    UPDATE Bookings
+    SET status = 'Cancelled'
+    WHERE id = @id;
 END;
